@@ -13,10 +13,6 @@
 		FF48F8B521FCD1CD00A44E60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF48F8B421FCD1CD00A44E60 /* Assets.xcassets */; };
 		FF48F8B821FCD1CD00A44E60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF48F8B621FCD1CD00A44E60 /* LaunchScreen.storyboard */; };
 		FF48F8C021FCD1E500A44E60 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF48F8BF21FCD1E500A44E60 /* Map.swift */; };
-		FF48F8CF21FD154900A44E60 /* g_area.aac in Resources */ = {isa = PBXBuildFile; fileRef = FF48F8CB21FD14FB00A44E60 /* g_area.aac */; };
-		FF48F8D021FD154900A44E60 /* l_area.aac in Resources */ = {isa = PBXBuildFile; fileRef = FF48F8CD21FD14FB00A44E60 /* l_area.aac */; };
-		FF48F8D121FD154900A44E60 /* t_area.aac in Resources */ = {isa = PBXBuildFile; fileRef = FF48F8CC21FD14FB00A44E60 /* t_area.aac */; };
-		FF48F8D221FD154900A44E60 /* x_area.aac in Resources */ = {isa = PBXBuildFile; fileRef = FF48F8CE21FD14FB00A44E60 /* x_area.aac */; };
 		FF48F8ED21FDD35000A44E60 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF48F8D421FDD35000A44E60 /* Location.swift */; };
 		FF48F8EE21FDD35000A44E60 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF48F8D521FDD35000A44E60 /* Array.swift */; };
 		FF48F8EF21FDD35000A44E60 /* MazeCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF48F8D621FDD35000A44E60 /* MazeCanvas.swift */; };
@@ -44,6 +40,13 @@
 		FF48F90621FDDE6E00A44E60 /* AudioFriendlyLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF48F90521FDDE6E00A44E60 /* AudioFriendlyLayout.swift */; };
 		FFDEDEA421FE2485002C070D /* WinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDEDEA321FE2485002C070D /* WinViewController.swift */; };
 		FFDEDEA621FE249A002C070D /* LoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDEDEA521FE249A002C070D /* LoseViewController.swift */; };
+		FFDEDEAC21FE2803002C070D /* forest.aac in Resources */ = {isa = PBXBuildFile; fileRef = FFDEDEA721FE2802002C070D /* forest.aac */; };
+		FFDEDEAD21FE2803002C070D /* goodboy.aac in Resources */ = {isa = PBXBuildFile; fileRef = FFDEDEA821FE2802002C070D /* goodboy.aac */; };
+		FFDEDEAE21FE2803002C070D /* danger2.aac in Resources */ = {isa = PBXBuildFile; fileRef = FFDEDEA921FE2802002C070D /* danger2.aac */; };
+		FFDEDEAF21FE2803002C070D /* death.aac in Resources */ = {isa = PBXBuildFile; fileRef = FFDEDEAA21FE2803002C070D /* death.aac */; };
+		FFDEDEB021FE2803002C070D /* footsteps.aac in Resources */ = {isa = PBXBuildFile; fileRef = FFDEDEAB21FE2803002C070D /* footsteps.aac */; };
+		FFDEDEB321FE287B002C070D /* rotate.aac in Resources */ = {isa = PBXBuildFile; fileRef = FFDEDEB121FE287B002C070D /* rotate.aac */; };
+		FFDEDEB421FE287B002C070D /* startbark.aac in Resources */ = {isa = PBXBuildFile; fileRef = FFDEDEB221FE287B002C070D /* startbark.aac */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,10 +58,6 @@
 		FF48F8B721FCD1CD00A44E60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF48F8B921FCD1CD00A44E60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF48F8BF21FCD1E500A44E60 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
-		FF48F8CB21FD14FB00A44E60 /* g_area.aac */ = {isa = PBXFileReference; lastKnownFileType = file; name = g_area.aac; path = ../../../../Downloads/audiotest/g_area.aac; sourceTree = "<group>"; };
-		FF48F8CC21FD14FB00A44E60 /* t_area.aac */ = {isa = PBXFileReference; lastKnownFileType = file; name = t_area.aac; path = ../../../../Downloads/audiotest/t_area.aac; sourceTree = "<group>"; };
-		FF48F8CD21FD14FB00A44E60 /* l_area.aac */ = {isa = PBXFileReference; lastKnownFileType = file; name = l_area.aac; path = ../../../../Downloads/audiotest/l_area.aac; sourceTree = "<group>"; };
-		FF48F8CE21FD14FB00A44E60 /* x_area.aac */ = {isa = PBXFileReference; lastKnownFileType = file; name = x_area.aac; path = ../../../../Downloads/audiotest/x_area.aac; sourceTree = "<group>"; };
 		FF48F8D421FDD35000A44E60 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		FF48F8D521FDD35000A44E60 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		FF48F8D621FDD35000A44E60 /* MazeCanvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MazeCanvas.swift; sourceTree = "<group>"; };
@@ -87,6 +86,13 @@
 		FF48F90521FDDE6E00A44E60 /* AudioFriendlyLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFriendlyLayout.swift; sourceTree = "<group>"; };
 		FFDEDEA321FE2485002C070D /* WinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinViewController.swift; sourceTree = "<group>"; };
 		FFDEDEA521FE249A002C070D /* LoseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoseViewController.swift; sourceTree = "<group>"; };
+		FFDEDEA721FE2802002C070D /* forest.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = forest.aac; sourceTree = "<group>"; };
+		FFDEDEA821FE2802002C070D /* goodboy.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = goodboy.aac; sourceTree = "<group>"; };
+		FFDEDEA921FE2802002C070D /* danger2.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = danger2.aac; sourceTree = "<group>"; };
+		FFDEDEAA21FE2803002C070D /* death.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = death.aac; sourceTree = "<group>"; };
+		FFDEDEAB21FE2803002C070D /* footsteps.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = footsteps.aac; sourceTree = "<group>"; };
+		FFDEDEB121FE287B002C070D /* rotate.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = rotate.aac; sourceTree = "<group>"; };
+		FFDEDEB221FE287B002C070D /* startbark.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = startbark.aac; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,11 +125,14 @@
 		FF48F8AC21FCD1CC00A44E60 /* GGJ19 */ = {
 			isa = PBXGroup;
 			children = (
+				FFDEDEB121FE287B002C070D /* rotate.aac */,
+				FFDEDEB221FE287B002C070D /* startbark.aac */,
+				FFDEDEA921FE2802002C070D /* danger2.aac */,
+				FFDEDEAA21FE2803002C070D /* death.aac */,
+				FFDEDEAB21FE2803002C070D /* footsteps.aac */,
+				FFDEDEA721FE2802002C070D /* forest.aac */,
+				FFDEDEA821FE2802002C070D /* goodboy.aac */,
 				FF48F8D321FDD35000A44E60 /* MazeMaker */,
-				FF48F8CB21FD14FB00A44E60 /* g_area.aac */,
-				FF48F8CD21FD14FB00A44E60 /* l_area.aac */,
-				FF48F8CC21FD14FB00A44E60 /* t_area.aac */,
-				FF48F8CE21FD14FB00A44E60 /* x_area.aac */,
 				FF48F8AD21FCD1CC00A44E60 /* AppDelegate.swift */,
 				FF48F8AF21FCD1CC00A44E60 /* ViewController.swift */,
 				FFDEDEA321FE2485002C070D /* WinViewController.swift */,
@@ -228,14 +237,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFDEDEB321FE287B002C070D /* rotate.aac in Resources */,
 				FF48F90321FDD35000A44E60 /* Info.plist in Resources */,
-				FF48F8D121FD154900A44E60 /* t_area.aac in Resources */,
 				FF48F8B821FCD1CD00A44E60 /* LaunchScreen.storyboard in Resources */,
-				FF48F8CF21FD154900A44E60 /* g_area.aac in Resources */,
-				FF48F8D021FD154900A44E60 /* l_area.aac in Resources */,
+				FFDEDEAD21FE2803002C070D /* goodboy.aac in Resources */,
+				FFDEDEB421FE287B002C070D /* startbark.aac in Resources */,
 				FF48F8B521FCD1CD00A44E60 /* Assets.xcassets in Resources */,
+				FFDEDEAE21FE2803002C070D /* danger2.aac in Resources */,
+				FFDEDEB021FE2803002C070D /* footsteps.aac in Resources */,
 				FF48F8B321FCD1CC00A44E60 /* Main.storyboard in Resources */,
-				FF48F8D221FD154900A44E60 /* x_area.aac in Resources */,
+				FFDEDEAC21FE2803002C070D /* forest.aac in Resources */,
+				FFDEDEAF21FE2803002C070D /* death.aac in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

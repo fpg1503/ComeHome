@@ -93,7 +93,7 @@ struct Map {
     var initialState: State {
         return State(map: self,
                      currentLocation: startPoint,
-                     audioSources: [AudioSource(origin: destination, sound: Sound(name: "g_area"))], heading: .up)
+                     audioSources: [AudioSource(origin: destination, sound: Sound(name: "goodboy"))], heading: .up)
     }
 }
 
@@ -289,15 +289,19 @@ func vibrate(_ dogs: Int, _ rotating: Bool) {
 }
 
 func alert() {
-    let url = URL(string: Bundle.main.path(forResource: "t_area", ofType: "aac")!)!
+    ViewController.always.setVolume(0, fadeDuration: 3)
+    let url = URL(string: Bundle.main.path(forResource: "death", ofType: "aac")!)!
     let player = try! AVAudioPlayer(contentsOf: url)
     ViewController.players.append(player)
     player.play()
-    ViewController.always.stop()
     ViewController.sharedInstance.performSegue(withIdentifier: "lose", sender: nil)
 }
 
 func yes() {
-    ViewController.always.stop()
+    ViewController.always.setVolume(0, fadeDuration: 3)
+    let url = URL(string: Bundle.main.path(forResource: "goodboy", ofType: "aac")!)!
+    let player = try! AVAudioPlayer(contentsOf: url)
+    ViewController.players.append(player)
+    player.play()
     ViewController.sharedInstance.performSegue(withIdentifier: "win", sender: nil)
 }

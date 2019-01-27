@@ -38,17 +38,20 @@ class ViewController: UIViewController {
             player.numberOfLoops = -1
         }
 
-        let url = URL(string: Bundle.main.path(forResource: "x_area", ofType: "aac")!)!
+        //TODO: Fence, danger 1, 3
+        let url = URL(string: Bundle.main.path(forResource: "danger2", ofType: "aac")!)!
         ViewController.warning = try! AVAudioPlayer(contentsOf: url)
         ViewController.warning.numberOfLoops = -1
         ViewController.warning.volume = 0
         ViewController.warning.play()
         updateState()
 
-        let alwaysUrl = URL(string: Bundle.main.path(forResource: "l_area", ofType: "aac")!)!
+        //TODO: long whistle
+        let alwaysUrl = URL(string: Bundle.main.path(forResource: "forest", ofType: "aac")!)!
         ViewController.always = try! AVAudioPlayer(contentsOf: alwaysUrl)
         ViewController.always.numberOfLoops = -1
         ViewController.always.play()
+        ViewController.always.setVolume(1, fadeDuration: 0.2)
         ViewController.sharedInstance = self
     }
 
