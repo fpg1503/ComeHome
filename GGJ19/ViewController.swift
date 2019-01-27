@@ -8,6 +8,8 @@ class ViewController: UIViewController {
     static var audioSourcePlayers: [Sound: AVAudioPlayer] = [:]
 
     static var warning: AVAudioPlayer!
+    static var warning2: AVAudioPlayer!
+
     static var always: AVAudioPlayer!
 
     var state: State! {
@@ -44,6 +46,12 @@ class ViewController: UIViewController {
         ViewController.warning.numberOfLoops = -1
         ViewController.warning.volume = 0
         ViewController.warning.play()
+
+        let url2 = URL(string: Bundle.main.path(forResource: "danger999", ofType: "aac")!)!
+        ViewController.warning2 = try! AVAudioPlayer(contentsOf: url2)
+        ViewController.warning2.numberOfLoops = -1
+        ViewController.warning2.volume = 0
+        ViewController.warning2.play()
         updateState()
 
         //TODO: long whistle

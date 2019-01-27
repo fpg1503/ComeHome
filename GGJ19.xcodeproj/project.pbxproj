@@ -48,6 +48,7 @@
 		FFDEDEB321FE287B002C070D /* rotate.aac in Resources */ = {isa = PBXBuildFile; fileRef = FFDEDEB121FE287B002C070D /* rotate.aac */; };
 		FFDEDEB421FE287B002C070D /* startbark.aac in Resources */ = {isa = PBXBuildFile; fileRef = FFDEDEB221FE287B002C070D /* startbark.aac */; };
 		FFDEDEB621FE2A71002C070D /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDEDEB521FE2A71002C070D /* AudioPlayer.swift */; };
+		FFDEDEB821FE317D002C070D /* danger999.aac in Resources */ = {isa = PBXBuildFile; fileRef = FFDEDEB721FE317D002C070D /* danger999.aac */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +96,7 @@
 		FFDEDEB121FE287B002C070D /* rotate.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = rotate.aac; sourceTree = "<group>"; };
 		FFDEDEB221FE287B002C070D /* startbark.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = startbark.aac; sourceTree = "<group>"; };
 		FFDEDEB521FE2A71002C070D /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		FFDEDEB721FE317D002C070D /* danger999.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = danger999.aac; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 		FF48F8AC21FCD1CC00A44E60 /* GGJ19 */ = {
 			isa = PBXGroup;
 			children = (
+				FFDEDEB721FE317D002C070D /* danger999.aac */,
 				FFDEDEB121FE287B002C070D /* rotate.aac */,
 				FFDEDEB221FE287B002C070D /* startbark.aac */,
 				FFDEDEA921FE2802002C070D /* danger2.aac */,
@@ -244,6 +247,7 @@
 				FF48F90321FDD35000A44E60 /* Info.plist in Resources */,
 				FF48F8B821FCD1CD00A44E60 /* LaunchScreen.storyboard in Resources */,
 				FFDEDEAD21FE2803002C070D /* goodboy.aac in Resources */,
+				FFDEDEB821FE317D002C070D /* danger999.aac in Resources */,
 				FFDEDEB421FE287B002C070D /* startbark.aac in Resources */,
 				FF48F8B521FCD1CD00A44E60 /* Assets.xcassets in Resources */,
 				FFDEDEAE21FE2803002C070D /* danger2.aac in Resources */,
