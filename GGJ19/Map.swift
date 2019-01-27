@@ -233,6 +233,7 @@ func loopWarning(_ state: State, _ newPoint: Point, rotating: Bool) {
     let rightIsDog = Point(x: newPoint.x + 1, y: newPoint.y).map { !state.map.isValid(point: $0) } ?? true
 
     let dogCount = [upIsDog, downIsDog, leftIsDog, rightIsDog].map { $0 ? 1 : 0 }.reduce(0, +)
+    ViewController.sharedInstance.dogCount = dogCount
 
     let volume = dogCount == 0 ? 0 : 0.25 + (Float(dogCount) * 0.25)
 

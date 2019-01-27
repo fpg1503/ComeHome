@@ -35,7 +35,6 @@
 		FF48F90021FDD35000A44E60 /* OrthogonalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF48F8E721FDD35000A44E60 /* OrthogonalCell.swift */; };
 		FF48F90121FDD35000A44E60 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF48F8E821FDD35000A44E60 /* Layout.swift */; };
 		FF48F90221FDD35000A44E60 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF48F8EA21FDD35000A44E60 /* Set.swift */; };
-		FF48F90321FDD35000A44E60 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF48F8EB21FDD35000A44E60 /* Info.plist */; };
 		FF48F90421FDD35000A44E60 /* OrthogonalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF48F8EC21FDD35000A44E60 /* OrthogonalLayout.swift */; };
 		FF48F90621FDDE6E00A44E60 /* AudioFriendlyLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF48F90521FDDE6E00A44E60 /* AudioFriendlyLayout.swift */; };
 		FFDEDEA421FE2485002C070D /* WinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDEDEA321FE2485002C070D /* WinViewController.swift */; };
@@ -244,7 +243,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFDEDEB321FE287B002C070D /* rotate.aac in Resources */,
-				FF48F90321FDD35000A44E60 /* Info.plist in Resources */,
 				FF48F8B821FCD1CD00A44E60 /* LaunchScreen.storyboard in Resources */,
 				FFDEDEAD21FE2803002C070D /* goodboy.aac in Resources */,
 				FFDEDEB821FE317D002C070D /* danger999.aac in Resources */,

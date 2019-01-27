@@ -12,6 +12,9 @@ class ViewController: UIViewController {
 
     static var always: AVAudioPlayer!
 
+    var gridString = ""
+    var dogCount = 0
+
     var state: State! {
         didSet {
             updateState()
@@ -19,7 +22,6 @@ class ViewController: UIViewController {
     }
 
     @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var canvasHolder: UIView!
     @IBOutlet weak var gestureRecognizerView: UIView!
 
@@ -80,6 +82,7 @@ class ViewController: UIViewController {
                                                       scale: 30,
                                                       margin: 10)
         let canvas = MazeCanvas(geometry: geometry)
+        gridString = grid.toString()
         print(grid.toString())
 
         let map = Map.from(grid: grid)
@@ -136,10 +139,6 @@ class ViewController: UIViewController {
         self.state = GGJ19.walk(direction: direction, state: state)
     }
 
-    @IBAction func slided(_ sender: UISlider) {
-        updateState()
-    }
-
     func nextLevel() {
         AudioPlayer.sharedInstance.start()
         difficulty += 1
@@ -170,23 +169,7 @@ class ViewController: UIViewController {
 
         print("X: \(x) - Y: \(y) - New heading: \(String(describing: state.heading))")
 
-        // Heart Beat
-        ////        let sliderValue = slider.value
-        //        let distance = state.map.destination.distance(to: state.currentLocation)
-        //        let normalizedDistance = distance / Point(x: 0, y: 0)!.distance(to: state.map.destination)
-        //        let sliderValue = Float(normalizedDistance)
-        //        let maxHeart = 275
-        //        let minHeart = 60
-        //
-        //        let relativeSlider = (sliderValue * Float(maxHeart - minHeart)) + Float(minHeart)
-        //
-        //        let soundSpeed: Float = 128
-        //        let playbackSpeed = relativeSlider/soundSpeed
-        //
-        //        heart.rate = playbackSpeed
-
-        //        label.text = "X: \(x)\nY: \(y)\nSlider: \(sliderValue)\nBPM: \(relativeSlider)"
-        label.text = "X: \(x)\nY: \(y)"
+        label.text = "X: \(x)\nY: \(y)\nHeading: \(String(describing: state.heading))\nAdjacent dogs: \(dogCount)\n\(gridString)"
     }
 
     override var canBecomeFirstResponder: Bool { return true }
@@ -215,7 +198,7 @@ class ViewController: UIViewController {
         doWalk(direction: .right, state: state)
     }
 
-    @objc func toggleDebug() {
+    @IBAction func toggleDebug() {
         gestureRecognizerView.isHidden = !gestureRecognizerView.isHidden
     }
 }
