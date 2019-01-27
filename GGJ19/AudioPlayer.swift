@@ -23,17 +23,23 @@ class AudioPlayer {
     }()
 
     func start() {
-        startPlayer.currentTime = 0
+        if startPlayer.isPlaying {
+            startPlayer.currentTime = 0
+        }
         startPlayer.play()
     }
 
     func walk() {
-        walkPlayer.currentTime = 0
+        if walkPlayer.isPlaying {
+            walkPlayer.currentTime = 0
+        }
         walkPlayer.play()
     }
 
     func rotate() {
-        rotatePlayer.currentTime = 0
+        if rotatePlayer.isPlaying {
+            rotatePlayer.currentTime = 0
+        }
         rotatePlayer.play()
     }
 }
