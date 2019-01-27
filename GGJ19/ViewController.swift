@@ -28,6 +28,8 @@ class ViewController: UIViewController {
     private var leftGestureRecognizer: UISwipeGestureRecognizer!
     private var rightGestureRecognizer: UISwipeGestureRecognizer!
 
+    private var debugDoubleTapGestureRecognizer: UITapGestureRecognizer!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,7 +106,12 @@ class ViewController: UIViewController {
         rightG.direction = .right
         rightGestureRecognizer = rightG
 
-        [upG, downG, leftG, rightG].forEach {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(toggleDebug))
+        tapGesture.numberOfTapsRequired = 2
+        tapGesture.numberOfTouchesRequired = 2
+        debugDoubleTapGestureRecognizer = tapGesture
+
+        [upG, downG, leftG, rightG, tapGesture].forEach {
             gestureRecognizerView.addGestureRecognizer($0)
         }
     }
@@ -206,6 +213,10 @@ class ViewController: UIViewController {
 
     @objc func right() {
         doWalk(direction: .right, state: state)
+    }
+
+    @objc func toggleDebug() {
+        gestureRecognizerView.isHidden = !gestureRecognizerView.isHidden
     }
 }
 
