@@ -52,6 +52,14 @@
                                     <action selector="slided:" destination="BYZ-38-t0r" eventType="valueChanged" id="ZIt-dO-Ikk"/>
                                 </connections>
                             </slider>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xPI-Xa-78a">
+                                <rect key="frame" x="159" y="447" width="200" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="5DN-uZ-Z7C"/>
+                                    <constraint firstAttribute="height" constant="200" id="WDr-ih-Wqc"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJ2-RR-lxT">
                                 <rect key="frame" x="124" y="166" width="30" height="30"/>
                                 <state key="normal" title="Left"/>
@@ -64,7 +72,8 @@
                         <constraints>
                             <constraint firstItem="iJ2-RR-lxT" firstAttribute="centerY" secondItem="xT9-4W-s8O" secondAttribute="centerY" id="2bH-My-SQa"/>
                             <constraint firstItem="dVm-it-e2I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="EgU-gH-k8x"/>
-                            <constraint firstItem="xT9-4W-s8O" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iJ2-RR-lxT" secondAttribute="trailing" symbolic="YES" id="FII-By-Ssj"/>
+                            <constraint firstItem="xT9-4W-s8O" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iJ2-RR-lxT" secondAttribute="trailing" constant="8" symbolic="YES" id="FII-By-Ssj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xPI-Xa-78a" secondAttribute="trailing" constant="16" id="Mhy-o1-Ko0"/>
                             <constraint firstItem="uLQ-Gn-ajP" firstAttribute="top" secondItem="KJl-tC-lgk" secondAttribute="bottom" constant="77" id="THh-KG-v8j"/>
                             <constraint firstItem="KJl-tC-lgk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="90" id="UMf-FF-MYH"/>
                             <constraint firstAttribute="trailing" secondItem="xT9-4W-s8O" secondAttribute="trailing" constant="106" id="WwP-8N-AcD"/>
@@ -73,11 +82,13 @@
                             <constraint firstItem="iJ2-RR-lxT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="124" id="q4U-UT-nKm"/>
                             <constraint firstItem="dVm-it-e2I" firstAttribute="top" secondItem="uLQ-Gn-ajP" secondAttribute="bottom" constant="158" id="sTB-aw-IgK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dVm-it-e2I" secondAttribute="trailing" constant="16" id="sf2-6S-1Fv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xPI-Xa-78a" secondAttribute="bottom" constant="20" id="vrm-Vy-31J"/>
                             <constraint firstItem="uLQ-Gn-ajP" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="wBx-e8-Kdj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="canvasHolder" destination="xPI-Xa-78a" id="rDu-Rf-7NM"/>
                         <outlet property="label" destination="Lqy-KU-OMa" id="en3-H0-xCU"/>
                         <outlet property="slider" destination="dVm-it-e2I" id="iCG-UJ-pAT"/>
                     </connections>

@@ -189,9 +189,7 @@ func yes() {
     let alertController = UIAlertController(title: "You won", message: "You won the game", preferredStyle: .alert)
     alertController.addAction(UIAlertAction(title: "Great!", style: .default, handler: { _ in
         let state = ViewController.sharedInstance.state
-        ViewController.sharedInstance.state = State(map: state.map,
-                                                    currentLocation: state.map.startPoint,
-                                                    audioSources: state.audioSources)
+        ViewController.sharedInstance.state = state!.map.initialState
         ViewController.always.play()
     }))
     ViewController.sharedInstance.present(alertController, animated: true, completion: nil)

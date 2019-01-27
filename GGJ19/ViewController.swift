@@ -10,56 +10,7 @@ class ViewController: UIViewController {
     static var warning: AVAudioPlayer!
     static var always: AVAudioPlayer!
 
-    var state = State(map: Map(height: 10,
-                               width: 10,
-                               warning: [Point(x: 2, y: 1)!,
-                                         Point(x: 2, y: 2)!,
-                                         Point(x: 2, y: 3)!,
-                                         Point(x: 2, y: 4)!,
-                                         Point(x: 3, y: 1)!,
-                                         Point(x: 4, y: 1)!,
-                                         Point(x: 5, y: 1)!,
-                                         Point(x: 5, y: 3)!,
-                                         Point(x: 6, y: 1)!,
-                                         Point(x: 7, y: 1)!,
-                                         Point(x: 8, y: 1)!,
-                                         Point(x: 8, y: 1)!,
-                                         Point(x: 8, y: 2)!,
-                                         Point(x: 8, y: 3)!,
-                                         Point(x: 8, y: 4)!,
-                                         Point(x: 8, y: 5)!,
-                                         Point(x: 1, y: 5)!,
-                                         Point(x: 2, y: 6)!,
-                                         Point(x: 4, y: 3)!,
-                                         Point(x: 4, y: 4)!,
-                                         Point(x: 4, y: 5)!,
-                                         Point(x: 4, y: 6)!,
-                                         Point(x: 4, y: 7)!,
-                                         Point(x: 2, y: 7)!,
-                                         Point(x: 6, y: 3)!,
-                                         Point(x: 6, y: 4)!,
-                                         Point(x: 6, y: 5)!,
-                                         Point(x: 6, y: 6)!,
-                                         Point(x: 6, y: 7)!,
-                                         Point(x: 3, y: 8)!],
-                               path: [Point(x: 3, y: 2)!,
-                                      Point(x: 3, y: 3)!,
-                                      Point(x: 3, y: 4)!,
-                                      Point(x: 3, y: 5)!,
-                                      Point(x: 3, y: 6)!,
-                                      Point(x: 3, y: 7)!,
-                                      Point(x: 4, y: 2)!,
-                                      Point(x: 5, y: 2)!,
-                                      Point(x: 6, y: 2)!,
-                                      Point(x: 7, y: 2)!,
-                                      Point(x: 7, y: 3)!,
-                                      Point(x: 7, y: 4)!,
-                                      Point(x: 7, y: 5)!],
-                               destination: Point(x: 7, y: 6)!,
-                               startPoint: Point(x: 2, y: 5)!),
-                      currentLocation: Point(x: 2, y: 5)!,
-                      audioSources: [AudioSource(origin: Point(x: 7, y: 6)!,
-                                                      sound: Sound(name: "g_area"))]) {
+    var state: State! {
         didSet {
             updateState()
         }
@@ -67,9 +18,13 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var canvasHolder: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        generateAndSetRandomLevel()
+
         for player in state.audioSources.map({ $0.player }) {
             player.play()
             player.numberOfLoops = -1
@@ -87,8 +42,9 @@ class ViewController: UIViewController {
         ViewController.always.numberOfLoops = -1
         ViewController.always.play()
         ViewController.sharedInstance = self
+    }
 
-
+    func generateAndSetRandomLevel() {
         let layout = AudioFriendlyLayout(rows: 3, columns: 3)
         let grid = Grid(layout: layout)
 
@@ -104,7 +60,8 @@ class ViewController: UIViewController {
         let map = Map.from(grid: grid)
 
         state = map.initialState
-        view.addSubview(canvas)
+        canvasHolder.subviews.forEach { $0.removeFromSuperview() }
+        canvasHolder.addSubview(canvas)
     }
 
     override func didReceiveMemoryWarning() {
