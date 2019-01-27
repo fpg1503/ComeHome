@@ -65,8 +65,10 @@ class ViewController: UIViewController {
         AudioPlayer.sharedInstance.start()
     }
 
-    func generateAndSetRandomLevel() {
-        let layout = AudioFriendlyLayout(rows: 4, columns: 3)
+    var difficulty = 0
+
+    func generateAndSetRandomLevel(difficulty: Int = 0) {
+        let layout = AudioFriendlyLayout(rows: 3 + difficulty, columns: 3)
         let grid = Grid(layout: layout)
 
         let algo = RecursiveBacktracker()
@@ -133,7 +135,8 @@ class ViewController: UIViewController {
 
     func nextLevel() {
         AudioPlayer.sharedInstance.start()
-        generateAndSetRandomLevel()
+        difficulty += 1
+        generateAndSetRandomLevel(difficulty: difficulty)
     }
 
     func restartLevel() {
