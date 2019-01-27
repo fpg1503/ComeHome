@@ -19,10 +19,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var canvasHolder: UIView!
+    @IBOutlet weak var gestureRecognizerView: UIView!
+
+    private var upGestureRecognizer: UISwipeGestureRecognizer!
+    private var downGestureRecognizer: UISwipeGestureRecognizer!
+    private var leftGestureRecognizer: UISwipeGestureRecognizer!
+    private var rightGestureRecognizer: UISwipeGestureRecognizer!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        addGestureRecognizers()
         generateAndSetRandomLevel()
 
         for player in state.audioSources.map({ $0.player }) {
@@ -45,7 +53,7 @@ class ViewController: UIViewController {
     }
 
     func generateAndSetRandomLevel() {
-        let layout = AudioFriendlyLayout(rows: 3, columns: 3)
+        let layout = AudioFriendlyLayout(rows: 5, columns: 3)
         let grid = Grid(layout: layout)
 
         let algo = RecursiveBacktracker()
@@ -64,6 +72,27 @@ class ViewController: UIViewController {
         canvasHolder.addSubview(canvas)
     }
 
+    func addGestureRecognizers() {
+        let upG = UISwipeGestureRecognizer(target: self, action: #selector(up))
+        upG.direction = .up
+        upGestureRecognizer = upG
+
+        let downG = UISwipeGestureRecognizer(target: self, action: #selector(down))
+        downG.direction = .down
+        downGestureRecognizer = downG
+
+        let leftG = UISwipeGestureRecognizer(target: self, action: #selector(left))
+        leftG.direction = .left
+        leftGestureRecognizer = leftG
+
+        let rightG = UISwipeGestureRecognizer(target: self, action: #selector(right))
+        rightG.direction = .right
+        rightGestureRecognizer = rightG
+
+        [upG, downG, leftG, rightG].forEach {
+            gestureRecognizerView.addGestureRecognizer($0)
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

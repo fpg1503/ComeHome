@@ -9,8 +9,14 @@ final class AudioFriendlyLayout: OrthogonalLayout {
         }
         string += "\n"
 
-        for _ in 0..<columns {
-            string += "XXXXX"
+        for column in 0..<columns {
+            if column == 0 {
+                string += "TXXXX"
+            } else if column == columns - 1 {
+                string += "XXXXT"
+            } else {
+                string += "XXXXX"
+            }
         }
         string += "\n"
 
@@ -46,16 +52,16 @@ final class AudioFriendlyLayout: OrthogonalLayout {
                 let rightSeparator = column == columns - 1 ? "XT" : "LL"
                 // X Flooding will take care of XXXXX -> TXXXXT
 
-                bottom += cell.isLinkedWith(cell.south) ? "\(leftSeparator)L\(rightSeparator)" : "XXXXX"
+                bottom += cell.isLinkedWith(cell.south) ? "\(leftSeparator)L\(rightSeparator)" : "\(leftSeparator)X\(rightSeparator)"
                 bottom2 += cell.isLinkedWith(cell.south) ? "\(leftSeparator)L\(rightSeparator)" : "TTTTT"
                 bottom3 += cell.isLinkedWith(cell.south) ? "\(leftSeparator)L\(rightSeparator)" : "TTTTT"
-                bottom4 += cell.isLinkedWith(cell.south) ? "\(leftSeparator)L\(rightSeparator)" : "XXXXX"
+                bottom4 += cell.isLinkedWith(cell.south) ? "\(leftSeparator)L\(rightSeparator)" : "\(leftSeparator)X\(rightSeparator)"
             }
 
             if row < rows - 1 {
                 string += "\n" + [bottom, bottom2, bottom3, bottom4].joined(separator: "\n") + "\n"
             } else {
-                string += "\n" + Array(repeating: "X", count: 5 * rows) + "\n" + Array(repeating: "T", count: 5 * rows) + "\n"
+                string += "\nT" + Array(repeating: "X", count: (5 * columns)-2) + "T\n" + Array(repeating: "T", count: 5 * columns) + "\n"
             }
         }
 
