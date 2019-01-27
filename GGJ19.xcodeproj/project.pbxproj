@@ -47,6 +47,7 @@
 		FFDEDEB021FE2803002C070D /* footsteps.aac in Resources */ = {isa = PBXBuildFile; fileRef = FFDEDEAB21FE2803002C070D /* footsteps.aac */; };
 		FFDEDEB321FE287B002C070D /* rotate.aac in Resources */ = {isa = PBXBuildFile; fileRef = FFDEDEB121FE287B002C070D /* rotate.aac */; };
 		FFDEDEB421FE287B002C070D /* startbark.aac in Resources */ = {isa = PBXBuildFile; fileRef = FFDEDEB221FE287B002C070D /* startbark.aac */; };
+		FFDEDEB621FE2A71002C070D /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDEDEB521FE2A71002C070D /* AudioPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +94,7 @@
 		FFDEDEAB21FE2803002C070D /* footsteps.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = footsteps.aac; sourceTree = "<group>"; };
 		FFDEDEB121FE287B002C070D /* rotate.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = rotate.aac; sourceTree = "<group>"; };
 		FFDEDEB221FE287B002C070D /* startbark.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = startbark.aac; sourceTree = "<group>"; };
+		FFDEDEB521FE2A71002C070D /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				FFDEDEA321FE2485002C070D /* WinViewController.swift */,
 				FFDEDEA521FE249A002C070D /* LoseViewController.swift */,
 				FF48F8BF21FCD1E500A44E60 /* Map.swift */,
+				FFDEDEB521FE2A71002C070D /* AudioPlayer.swift */,
 				FF48F8B121FCD1CC00A44E60 /* Main.storyboard */,
 				FF48F8B421FCD1CD00A44E60 /* Assets.xcassets */,
 				FF48F8B621FCD1CD00A44E60 /* LaunchScreen.storyboard */,
@@ -275,6 +278,7 @@
 				FF48F8F121FDD35000A44E60 /* Cell.swift in Sources */,
 				FF48F90421FDD35000A44E60 /* OrthogonalLayout.swift in Sources */,
 				FF48F8FD21FDD35000A44E60 /* PolarLocation.swift in Sources */,
+				FFDEDEB621FE2A71002C070D /* AudioPlayer.swift in Sources */,
 				FF48F8FA21FDD35000A44E60 /* PolarLayout.swift in Sources */,
 				FF48F90021FDD35000A44E60 /* OrthogonalCell.swift in Sources */,
 				FF48F8F521FDD35000A44E60 /* OrthoWallwiseGeometryGenerator.swift in Sources */,

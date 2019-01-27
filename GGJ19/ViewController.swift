@@ -53,6 +53,8 @@ class ViewController: UIViewController {
         ViewController.always.play()
         ViewController.always.setVolume(1, fadeDuration: 0.2)
         ViewController.sharedInstance = self
+
+        AudioPlayer.sharedInstance.start()
     }
 
     func generateAndSetRandomLevel() {
@@ -122,10 +124,12 @@ class ViewController: UIViewController {
     }
 
     func nextLevel() {
+        AudioPlayer.sharedInstance.start()
         generateAndSetRandomLevel()
     }
 
     func restartLevel() {
+        AudioPlayer.sharedInstance.start()
         state = state.map.initialState
     }
 

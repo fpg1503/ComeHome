@@ -161,7 +161,7 @@ func walk(direction: Direction, state: State) -> State {
     // Translate desired movement to north-heading
     // If left or right, just rotate heading!
     guard direction == .up || direction == .down else {
-        //TODO: Rotate sound
+        AudioPlayer.sharedInstance.rotate()
 
         let newState = State(map: state.map,
                              currentLocation: state.currentLocation,
@@ -188,7 +188,7 @@ func walk(direction: Direction, state: State) -> State {
     if state.map.destination == newPoint { yes() }
     loopWarning(state, newPoint, rotating: false)
 
-    //TODO: Walk sound
+    AudioPlayer.sharedInstance.walk()
     return State(map: state.map,
                  currentLocation: newPoint,
                  audioSources: state.audioSources,
