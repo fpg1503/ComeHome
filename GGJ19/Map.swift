@@ -168,7 +168,7 @@ func walk(direction: Direction, state: State) -> State {
                              audioSources: state.audioSources,
                              heading: newHeading)
 
-        loopWarning(newState, state.currentLocation)
+        loopWarning(newState, state.currentLocation, rotating: true)
         return newState
     }
 
@@ -186,7 +186,7 @@ func walk(direction: Direction, state: State) -> State {
     }
 
     if state.map.destination == newPoint { yes() }
-    loopWarning(state, newPoint)
+    loopWarning(state, newPoint, rotating: false)
 
     //TODO: Walk sound
     return State(map: state.map,
@@ -225,7 +225,7 @@ func volume(for state: State, audioSource: AudioSource) -> Float {
     return relativeAudio
 }
 
-func loopWarning(_ state: State, _ newPoint: Point) {
+func loopWarning(_ state: State, _ newPoint: Point, rotating: Bool) {
     // Count dogs!
     let upIsDog = Point(x: newPoint.x, y: newPoint.y - 1).map { !state.map.isValid(point: $0) } ?? true
     let downIsDog = Point(x: newPoint.x, y: newPoint.y + 1).map { !state.map.isValid(point: $0) } ?? true
@@ -234,7 +234,7 @@ func loopWarning(_ state: State, _ newPoint: Point) {
 
     let dogCount = [upIsDog, downIsDog, leftIsDog, rightIsDog].map { $0 ? 1 : 0 }.reduce(0, +)
 
-    let volume = Float(dogCount)/3.0 // You can never have 4 dogs around you!
+    let volume = dogCount == 0 ? 0 : 0.25 + (Float(dogCount) * 0.25)
 
     // Balance
     // Convert directions to player heading!
@@ -265,10 +265,27 @@ func loopWarning(_ state: State, _ newPoint: Point) {
     case (true, true): pan = 0
     }
 
-    print("Dogs: \(dogCount) - Volume: \(volume) - Pan: \(pan)\n L: \(myLeftIsDog ? "T" : "F") R: \(myRightIsDog ? "T" : "F")")
+    vibrate(dogCount, rotating)
+
+    print("Dogs: \(dogCount) - Volume: \(volume) - Pan: \(pan) L: \(myLeftIsDog ? "T" : "F") R: \(myRightIsDog ? "T" : "F")")
     ViewController.warning.play(atTime: 0)
     ViewController.warning.pan = pan
     ViewController.warning.setVolume(volume, fadeDuration: 0.2)
+}
+
+func vibrate(_ dogs: Int, _ rotating: Bool) {
+    guard dogs > 0, !rotating else { return }
+
+    if (UIDevice.current.value(forKey: "_feedbackSupportLevel") as? Int ?? 0) >= 2 {
+        switch dogs {
+        case 1: AudioServicesPlaySystemSound(1519)
+        case 2: AudioServicesPlaySystemSound(1520)
+        case 3: AudioServicesPlaySystemSound(1521)
+        default: break
+        }
+    } else {
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+    }
 }
 
 func alert() {
