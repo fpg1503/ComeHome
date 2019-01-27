@@ -53,7 +53,7 @@ class ViewController: UIViewController {
     }
 
     func generateAndSetRandomLevel() {
-        let layout = AudioFriendlyLayout(rows: 5, columns: 3)
+        let layout = AudioFriendlyLayout(rows: 4, columns: 3)
         let grid = Grid(layout: layout)
 
         let algo = RecursiveBacktracker()
@@ -134,6 +134,8 @@ class ViewController: UIViewController {
             }
             print("P: \(player.pan), V: \(volume)")
         }
+
+        print("X: \(x) - Y: \(y) - New heading: \(String(describing: state.heading))")
 
         // Heart Beat
         ////        let sliderValue = slider.value

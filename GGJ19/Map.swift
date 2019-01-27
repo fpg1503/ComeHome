@@ -93,7 +93,7 @@ struct Map {
     var initialState: State {
         return State(map: self,
                      currentLocation: startPoint,
-                     audioSources: [AudioSource(origin: destination, sound: Sound(name: "g_area"))])
+                     audioSources: [AudioSource(origin: destination, sound: Sound(name: "g_area"))], heading: .up)
     }
 }
 
@@ -101,10 +101,15 @@ struct State {
     let map: Map
     let currentLocation: Point
     let audioSources: [AudioSource]
+    let heading: Direction
 }
 
 enum Direction {
     case up, down, left, right
+
+    var opposite: Direction {
+        return self + .down
+    }
 }
 
 func + (lhs: Point, rhs: Direction) -> Point? {
@@ -120,22 +125,71 @@ func + (lhs: Point, rhs: Direction) -> Point? {
     }
 }
 
+func + (lhs: Direction, rhs: Direction) -> Direction {
+    switch rhs {
+    case .up: return lhs
+    case .down:
+        switch lhs {
+        case .up: return .down
+        case .down: return .up
+        case .left: return .right
+        case .right: return .left
+        }
+    case .left:
+        switch lhs {
+        case .up: return .left
+        case .down: return .right
+        case .left: return .down
+        case .right: return .up
+        }
+    case .right:
+        switch lhs {
+        case .up: return .right
+        case .down: return .left
+        case .left: return .up
+        case .right: return .down
+        }
+    }
+}
+
 func walk(direction: Direction, state: State) -> State {
-    guard let newPoint = state.currentLocation + direction,
+    // Walking is rotating and moving to the new forward
+
+    // Set new heading
+    let newHeading = direction == .down ? state.heading : state.heading + direction
+
+    // Translate desired movement to north-heading
+    // If left or right, just rotate heading!
+    guard direction == .up || direction == .down else {
+        //TODO: Rotate sound
+
+        return State(map: state.map,
+                     currentLocation: state.currentLocation,
+                     audioSources: state.audioSources,
+                     heading: newHeading)
+    }
+
+    let translatedDirection = direction == .down ? newHeading.opposite : newHeading
+
+    guard let newPoint = state.currentLocation + translatedDirection,
         state.map.isValid(point: newPoint) else {
             alert()
             //Back to home
             loopWarning(false)
             return State(map: state.map,
                          currentLocation: state.map.startPoint,
-                         audioSources: state.audioSources)
+                         audioSources: state.audioSources,
+                         heading: .up)
     }
 
     if state.map.destination == newPoint { yes() }
     loopWarning(state.map.warning.contains(newPoint))
+
+    //TODO: Walk sound
     return State(map: state.map,
                  currentLocation: newPoint,
-                 audioSources: state.audioSources)
+                 audioSources: state.audioSources,
+                 heading: newHeading)
 }
 
 func pan(for state: State, audioSource: AudioSource) -> Float {
