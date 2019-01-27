@@ -149,11 +149,13 @@ use headphones.</string>
                         <outlet property="gestureRecognizerView" destination="0Xz-tU-Pup" id="im6-kJ-uje"/>
                         <outlet property="label" destination="Lqy-KU-OMa" id="en3-H0-xCU"/>
                         <outlet property="slider" destination="dVm-it-e2I" id="iCG-UJ-pAT"/>
+                        <segue destination="Q9e-xd-a8s" kind="show" identifier="lose" id="fFe-YG-bNk"/>
+                        <segue destination="Lks-lf-Vnr" kind="show" identifier="win" id="sTy-bO-Gcy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="116.49175412293854"/>
+            <point key="canvasLocation" x="1622" y="779"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="uIk-5B-Vgd">
@@ -242,13 +244,23 @@ to rotate.</string>
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="poz-dH-nrs">
+                                <rect key="frame" x="0.0" y="10" width="375" height="667"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="aiG-Sl-DJb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="XxY-eX-19m" firstAttribute="centerX" secondItem="YjO-Un-uTj" secondAttribute="centerX" id="8Wd-a7-wg5"/>
+                            <constraint firstItem="poz-dH-nrs" firstAttribute="width" secondItem="6Qo-79-vL3" secondAttribute="width" id="9xU-n8-QK9"/>
                             <constraint firstItem="Iul-Ge-OnC" firstAttribute="centerX" secondItem="YjO-Un-uTj" secondAttribute="centerX" id="Dd9-QW-0pj"/>
+                            <constraint firstItem="poz-dH-nrs" firstAttribute="centerY" secondItem="6Qo-79-vL3" secondAttribute="centerYWithinMargins" id="KOd-jY-Bms"/>
                             <constraint firstItem="YjO-Un-uTj" firstAttribute="bottom" secondItem="XxY-eX-19m" secondAttribute="bottom" constant="100" id="awG-wG-F2n"/>
                             <constraint firstItem="Iul-Ge-OnC" firstAttribute="top" secondItem="YjO-Un-uTj" secondAttribute="top" constant="100" id="lpJ-5f-YTI"/>
+                            <constraint firstItem="poz-dH-nrs" firstAttribute="height" secondItem="6Qo-79-vL3" secondAttribute="height" id="m6b-wP-9sl"/>
+                            <constraint firstItem="poz-dH-nrs" firstAttribute="centerX" secondItem="6Qo-79-vL3" secondAttribute="centerXWithinMargins" id="nhL-H9-vwz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YjO-Un-uTj"/>
                     </view>
@@ -257,11 +269,121 @@ to rotate.</string>
             </objects>
             <point key="canvasLocation" x="850" y="779"/>
         </scene>
+        <!--Lose View Controller-->
+        <scene sceneID="oGj-dl-PRx">
+            <objects>
+                <viewController id="Q9e-xd-a8s" customClass="LoseViewController" customModule="GGJ19" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ES7-43-9wQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="eGj-KS-tdS">
+                                <rect key="frame" x="106.5" y="309" width="162" height="70.5"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="death" translatesAutoresizingMaskIntoConstraints="NO" id="geN-wk-pnv">
+                                        <rect key="frame" x="0.0" y="0.0" width="162" height="20"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oh, no... Poor puppy!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayr-j8-ArK">
+                                        <rect key="frame" x="0.0" y="50" width="162" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2B-57-2V3">
+                                <rect key="frame" x="0.0" y="10" width="375" height="667"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pgi-aI-3Hx">
+                                <rect key="frame" x="169.5" y="595" width="37" height="30"/>
+                                <state key="normal" title="Retry">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="close" destination="Q9e-xd-a8s" eventType="touchUpInside" id="Szj-Vl-lek"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="T2B-57-2V3" firstAttribute="centerX" secondItem="ES7-43-9wQ" secondAttribute="centerXWithinMargins" id="6ZS-ND-PgW"/>
+                            <constraint firstItem="T2B-57-2V3" firstAttribute="width" secondItem="ES7-43-9wQ" secondAttribute="width" id="9It-8P-ixo"/>
+                            <constraint firstItem="Pgi-aI-3Hx" firstAttribute="top" secondItem="3t1-27-CZt" secondAttribute="bottom" constant="-72" id="G24-0X-2rS"/>
+                            <constraint firstItem="eGj-KS-tdS" firstAttribute="centerX" secondItem="ES7-43-9wQ" secondAttribute="centerXWithinMargins" id="Gne-ui-3gt"/>
+                            <constraint firstItem="eGj-KS-tdS" firstAttribute="centerY" secondItem="ES7-43-9wQ" secondAttribute="centerYWithinMargins" id="XEk-CJ-16V"/>
+                            <constraint firstItem="T2B-57-2V3" firstAttribute="centerY" secondItem="ES7-43-9wQ" secondAttribute="centerYWithinMargins" id="cFu-Tz-Zmo"/>
+                            <constraint firstItem="Pgi-aI-3Hx" firstAttribute="centerX" secondItem="T2B-57-2V3" secondAttribute="centerX" id="e1g-M5-nxN"/>
+                            <constraint firstItem="T2B-57-2V3" firstAttribute="height" secondItem="ES7-43-9wQ" secondAttribute="height" id="qAZ-bH-Sdf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3t1-27-CZt"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nvY-Ag-UMy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2458" y="367"/>
+        </scene>
+        <!--Win View Controller-->
+        <scene sceneID="f6c-JO-drl">
+            <objects>
+                <viewController id="Lks-lf-Vnr" customClass="WinViewController" customModule="GGJ19" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="y1P-B7-LiR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="i51-Ww-FkI">
+                                <rect key="frame" x="102.5" y="295.5" width="170" height="96"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="win" translatesAutoresizingMaskIntoConstraints="NO" id="yrW-Ji-1Jh">
+                                        <rect key="frame" x="0.0" y="0.0" width="170" height="25"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SeO-nr-LZd">
+                                        <rect key="frame" x="0.0" y="55" width="170" height="41"/>
+                                        <string key="text">You have found home.
+Good boy!</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTn-wn-PAL">
+                                <rect key="frame" x="0.0" y="10" width="375" height="667"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4x-5M-gOI">
+                                <rect key="frame" x="131.5" y="595" width="113" height="30"/>
+                                <state key="normal" title="Go to next stage">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="close" destination="Lks-lf-Vnr" eventType="touchUpInside" id="U5u-gc-TDN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LTn-wn-PAL" firstAttribute="centerY" secondItem="y1P-B7-LiR" secondAttribute="centerYWithinMargins" id="3cF-tB-gUD"/>
+                            <constraint firstItem="LTn-wn-PAL" firstAttribute="centerX" secondItem="y1P-B7-LiR" secondAttribute="centerXWithinMargins" id="C57-Z7-wIW"/>
+                            <constraint firstItem="k4x-5M-gOI" firstAttribute="top" secondItem="pLA-Ps-QNg" secondAttribute="bottom" constant="-72" id="FXu-km-aDK"/>
+                            <constraint firstItem="LTn-wn-PAL" firstAttribute="width" secondItem="y1P-B7-LiR" secondAttribute="width" id="YjP-28-Ovn"/>
+                            <constraint firstItem="i51-Ww-FkI" firstAttribute="centerX" secondItem="y1P-B7-LiR" secondAttribute="centerXWithinMargins" id="gMF-8D-lUO"/>
+                            <constraint firstItem="k4x-5M-gOI" firstAttribute="centerX" secondItem="LTn-wn-PAL" secondAttribute="centerX" id="gl0-V4-iHx"/>
+                            <constraint firstItem="i51-Ww-FkI" firstAttribute="centerY" secondItem="y1P-B7-LiR" secondAttribute="centerYWithinMargins" id="lzq-4f-cd4"/>
+                            <constraint firstItem="LTn-wn-PAL" firstAttribute="height" secondItem="y1P-B7-LiR" secondAttribute="height" id="n9T-Hr-TTs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pLA-Ps-QNg"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c7N-rF-swa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2457" y="1134"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="death" width="30" height="20"/>
         <image name="dog" width="24" height="24"/>
         <image name="headphones" width="20" height="18"/>
         <image name="move" width="18" height="74"/>
         <image name="rotate" width="47" height="32"/>
+        <image name="win" width="25" height="25"/>
     </resources>
 </document>

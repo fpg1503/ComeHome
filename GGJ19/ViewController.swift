@@ -118,6 +118,14 @@ class ViewController: UIViewController {
         updateState()
     }
 
+    func nextLevel() {
+        generateAndSetRandomLevel()
+    }
+
+    func restartLevel() {
+        state = state.map.initialState
+    }
+
     func updateState() {
         let x = state.currentLocation.x
         let y = state.currentLocation.y

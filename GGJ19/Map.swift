@@ -293,15 +293,11 @@ func alert() {
     let player = try! AVAudioPlayer(contentsOf: url)
     ViewController.players.append(player)
     player.play()
+    ViewController.always.stop()
+    ViewController.sharedInstance.performSegue(withIdentifier: "lose", sender: nil)
 }
 
 func yes() {
     ViewController.always.stop()
-    let alertController = UIAlertController(title: "You won", message: "You won the game", preferredStyle: .alert)
-    alertController.addAction(UIAlertAction(title: "Great!", style: .default, handler: { _ in
-        let state = ViewController.sharedInstance.state
-        ViewController.sharedInstance.state = state!.map.initialState
-        ViewController.always.play()
-    }))
-    ViewController.sharedInstance.present(alertController, animated: true, completion: nil)
+    ViewController.sharedInstance.performSegue(withIdentifier: "win", sender: nil)
 }

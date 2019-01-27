@@ -42,6 +42,8 @@
 		FF48F90321FDD35000A44E60 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF48F8EB21FDD35000A44E60 /* Info.plist */; };
 		FF48F90421FDD35000A44E60 /* OrthogonalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF48F8EC21FDD35000A44E60 /* OrthogonalLayout.swift */; };
 		FF48F90621FDDE6E00A44E60 /* AudioFriendlyLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF48F90521FDDE6E00A44E60 /* AudioFriendlyLayout.swift */; };
+		FFDEDEA421FE2485002C070D /* WinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDEDEA321FE2485002C070D /* WinViewController.swift */; };
+		FFDEDEA621FE249A002C070D /* LoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDEDEA521FE249A002C070D /* LoseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +85,8 @@
 		FF48F8EB21FDD35000A44E60 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF48F8EC21FDD35000A44E60 /* OrthogonalLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrthogonalLayout.swift; sourceTree = "<group>"; };
 		FF48F90521FDDE6E00A44E60 /* AudioFriendlyLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFriendlyLayout.swift; sourceTree = "<group>"; };
+		FFDEDEA321FE2485002C070D /* WinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinViewController.swift; sourceTree = "<group>"; };
+		FFDEDEA521FE249A002C070D /* LoseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,8 @@
 				FF48F8CE21FD14FB00A44E60 /* x_area.aac */,
 				FF48F8AD21FCD1CC00A44E60 /* AppDelegate.swift */,
 				FF48F8AF21FCD1CC00A44E60 /* ViewController.swift */,
+				FFDEDEA321FE2485002C070D /* WinViewController.swift */,
+				FFDEDEA521FE249A002C070D /* LoseViewController.swift */,
 				FF48F8BF21FCD1E500A44E60 /* Map.swift */,
 				FF48F8B121FCD1CC00A44E60 /* Main.storyboard */,
 				FF48F8B421FCD1CD00A44E60 /* Assets.xcassets */,
@@ -244,11 +250,13 @@
 				FF48F8B021FCD1CC00A44E60 /* ViewController.swift in Sources */,
 				FF48F8F621FDD35000A44E60 /* PolarCell.swift in Sources */,
 				FF48F8EE21FDD35000A44E60 /* Array.swift in Sources */,
+				FFDEDEA621FE249A002C070D /* LoseViewController.swift in Sources */,
 				FF48F8F821FDD35000A44E60 /* Algorithm.swift in Sources */,
 				FF48F90221FDD35000A44E60 /* Set.swift in Sources */,
 				FF48F90621FDDE6E00A44E60 /* AudioFriendlyLayout.swift in Sources */,
 				FF48F90121FDD35000A44E60 /* Layout.swift in Sources */,
 				FF48F8FE21FDD35000A44E60 /* GridLocation.swift in Sources */,
+				FFDEDEA421FE2485002C070D /* WinViewController.swift in Sources */,
 				FF48F8FB21FDD35000A44E60 /* PriorityQueue.swift in Sources */,
 				FF48F8EF21FDD35000A44E60 /* MazeCanvas.swift in Sources */,
 				FF48F8C021FCD1E500A44E60 /* Map.swift in Sources */,
