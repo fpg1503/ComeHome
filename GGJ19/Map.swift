@@ -269,12 +269,17 @@ func loopWarning(_ state: State, _ newPoint: Point, rotating: Bool) {
     vibrate(dogCount, rotating)
 
     print("Dogs: \(dogCount) - Volume: \(volume) - Pan: \(pan) L: \(myLeftIsDog ? "T" : "F") R: \(myRightIsDog ? "T" : "F")")
-    ViewController.warning.currentTime = 0
-    ViewController.warning.play()
+    if !ViewController.warning.isPlaying {
+        ViewController.warning.currentTime = 0
+        ViewController.warning.play()
+    }
     ViewController.warning.pan = pan
 
-    ViewController.warning2.currentTime = 0
-    ViewController.warning2.play()
+    if !ViewController.warning2.isPlaying {
+        ViewController.warning2.currentTime = 0
+        ViewController.warning2.play()
+    }
+    
     ViewController.warning2.pan = pan
     if volume > 0 {
         ViewController.warning.setVolume(volume, fadeDuration: 0.2)

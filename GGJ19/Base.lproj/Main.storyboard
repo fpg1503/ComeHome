@@ -106,15 +106,14 @@ use headphones.</string>
                                     <action selector="toggleDebug" destination="BYZ-38-t0r" eventType="touchUpInside" id="L9G-5p-UiG"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xPI-Xa-78a">
-                                <rect key="frame" x="159" y="447" width="200" height="200"/>
+                            <view contentMode="right" translatesAutoresizingMaskIntoConstraints="NO" id="xPI-Xa-78a">
+                                <rect key="frame" x="209" y="247" width="150" height="400"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="5DN-uZ-Z7C"/>
-                                    <constraint firstAttribute="height" constant="200" id="WDr-ih-Wqc"/>
+                                    <constraint firstAttribute="width" constant="150" id="5DN-uZ-Z7C"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Xz-tU-Pup" userLabel="Gesture Recognizer View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Xz-tU-Pup" userLabel="Gesture Recognizer View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -125,6 +124,7 @@ use headphones.</string>
                             <constraint firstItem="xT9-4W-s8O" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iJ2-RR-lxT" secondAttribute="trailing" constant="8" symbolic="YES" id="FII-By-Ssj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xPI-Xa-78a" secondAttribute="trailing" constant="16" id="Mhy-o1-Ko0"/>
                             <constraint firstItem="xT9-4W-s8O" firstAttribute="leading" secondItem="DFu-C4-nPW" secondAttribute="trailing" constant="25" id="NiS-ah-A5B"/>
+                            <constraint firstItem="xPI-Xa-78a" firstAttribute="top" secondItem="uLQ-Gn-ajP" secondAttribute="bottom" id="RJJ-0z-qqE"/>
                             <constraint firstItem="uLQ-Gn-ajP" firstAttribute="top" secondItem="KJl-tC-lgk" secondAttribute="bottom" constant="77" id="THh-KG-v8j"/>
                             <constraint firstItem="KJl-tC-lgk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="90" id="UMf-FF-MYH"/>
                             <constraint firstAttribute="trailing" secondItem="xT9-4W-s8O" secondAttribute="trailing" constant="106" id="WwP-8N-AcD"/>
